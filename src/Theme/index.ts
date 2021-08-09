@@ -1,4 +1,5 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 import { IColors, IBrandColors, ISpacing, IPadding } from "./styled";
 
 const BrandColors: IBrandColors = {
@@ -38,4 +39,13 @@ const Theme: DefaultTheme = {
   padding: { ...Padding },
 };
 
-export { Theme };
+const GlobalStyle = createGlobalStyle`
+    ${reset}
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+   }
+`;
+
+export { Theme, GlobalStyle };
