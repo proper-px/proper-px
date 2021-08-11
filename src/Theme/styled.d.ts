@@ -18,23 +18,70 @@ export interface IColors {
   green: string;
 }
 
-export interface ISpacing {
+export interface ISizes {
   small: string;
   base: string;
   large: string;
 }
 
-export interface IPadding {
-  small: string;
-  base: string;
-  large: string;
+export interface IPaddingProperties {
+  paddingX: string;
+  paddingY: string;
+}
+
+export interface IBorderProperties {
+  borderWidth: string;
+  borderStyle: string;
+  borderColor?: string;
+  borderRadius?: string;
+}
+
+export interface IFontFamilyOptions {
+  sansSerif: string;
+  serif: string;
+}
+
+export interface IFontProperties {
+  fontSize: string;
+  fontWeight: string;
+  fontFamily: string;
+}
+
+export interface IInputProperties {
+  padding: IPaddingProperties;
+  border: IBorderProperties;
+}
+
+export interface IStatusProperties {
+  success: string;
+  warning: string;
+  error: string;
+}
+
+export interface IButtonProperties {
+  padding: IPaddingProperties;
+  font: IFontProperties;
+  border: IBorderProperties;
 }
 
 declare module "styled-components" {
   export interface DefaultTheme {
     colors: IColors;
     brandColors: IBrandColors;
-    spacing: ISpacing;
-    padding: IPadding;
+    font: {
+      family: IFontFamilyOptions;
+      size: ISizes;
+      weight: ISizes;
+    };
+    spacing: ISizes;
+    padding: ISizes;
+    border: {
+      radius: ISizes;
+      borderWidth: ISizes;
+      borderStyle: string;
+    };
+    status: IStatusProperties;
+    input: IInputProperties;
+    button: IButtonProperties;
   }
 }
