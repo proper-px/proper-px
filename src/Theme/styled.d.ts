@@ -24,6 +24,15 @@ export interface ISizes {
   large: string;
 }
 
+export interface IShirtSizes {
+  xs?: string;
+  sm?: string;
+  md?: string;
+  lg?: string;
+  xl?: string;
+  xxl?: string;
+}
+
 export interface IPaddingProperties {
   paddingX: string;
   paddingY: string;
@@ -80,8 +89,17 @@ declare module "styled-components" {
       borderWidth: ISizes;
       borderStyle: string;
     };
+    breakpoints: IShirtSizes;
+    containerMaxWidths: IShirtSizes;
     status: IStatusProperties;
     input: IInputProperties;
     button: IButtonProperties;
+    navbar: {
+      bgColor: string;
+      fgColor: string;
+      linkPadding: string;
+      isFixed: boolean;
+      barPadding: string;
+    };
   }
 }

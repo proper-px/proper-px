@@ -70,6 +70,21 @@ const Theme: DefaultTheme = {
   spacing: { ...Spacing },
   padding: { ...Padding },
   border: { ...Border },
+  breakpoints: {
+    xs: "0",
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+    xxl: "1400px",
+  },
+  containerMaxWidths: {
+    sm: "540px",
+    md: "720px",
+    lg: "960px",
+    xl: "1140px",
+    xxl: "1320px",
+  },
   status: {
     success: Colors.green,
     warning: Colors.yellow,
@@ -102,6 +117,13 @@ const Theme: DefaultTheme = {
       borderStyle: Border.borderStyle,
       borderRadius: Border.radius.base,
     },
+  },
+  navbar: {
+    bgColor: BrandColors.primary,
+    fgColor: Colors.light,
+    linkPadding: `${Padding.small} ${Padding.base}`,
+    barPadding: `${Padding.base}`,
+    isFixed: false,
   },
 };
 
