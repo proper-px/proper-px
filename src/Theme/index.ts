@@ -127,6 +127,70 @@ const Theme: DefaultTheme = {
   },
 };
 
+const Dark: DefaultTheme = {
+  colors: { ...Colors },
+  brandColors: { ...BrandColors },
+  font: { ...FontStyles },
+  spacing: { ...Spacing },
+  padding: { ...Padding },
+  border: { ...Border },
+  breakpoints: {
+    xs: "0",
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+    xxl: "1400px",
+  },
+  containerMaxWidths: {
+    sm: "540px",
+    md: "720px",
+    lg: "960px",
+    xl: "1140px",
+    xxl: "1320px",
+  },
+  status: {
+    success: Colors.green,
+    warning: Colors.yellow,
+    error: Colors.red,
+  },
+  input: {
+    padding: {
+      paddingX: Padding.small,
+      paddingY: Padding.base,
+    },
+    border: {
+      borderWidth: Border.borderWidth.base,
+      borderStyle: Border.borderStyle,
+      borderColor: Colors.light,
+      borderRadius: Border.radius.base,
+    },
+  },
+  button: {
+    padding: {
+      paddingX: Padding.small,
+      paddingY: Padding.base,
+    },
+    font: {
+      fontSize: FontStyles.size.base,
+      fontWeight: FontStyles.weight.base,
+      fontFamily: FontStyles.family.sansSerif,
+    },
+    border: {
+      borderWidth: Border.borderWidth.base,
+      borderStyle: Border.borderStyle,
+      borderRadius: Border.radius.base,
+    },
+  },
+  navbar: {
+    bgColor: BrandColors.primary,
+    fgColor: Colors.light,
+    linkPadding: `${Padding.small} ${Padding.base}`,
+    barPadding: `${Padding.base}`,
+    isFixed: false,
+  },
+};
+
 const GlobalStyle = createGlobalStyle`
     ${reset}
     * {
@@ -134,6 +198,9 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
    }
+   body {
+     font-family: ${Theme.font.family.sansSerif};
+   }
 `;
 
-export { Theme, GlobalStyle };
+export { Theme, Dark, GlobalStyle };

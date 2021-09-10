@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import HomePage from "Pages/Home";
