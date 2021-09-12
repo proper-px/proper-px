@@ -23,7 +23,7 @@ const Colors: IColors = {
 const Spacing: ISizes = {
   small: ".5rem",
   base: "1rem",
-  large: "1.5rem",
+  large: "3rem",
 };
 
 const Padding: ISizes = {
@@ -133,6 +133,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+   }
+   body {
+     font-family: ${Theme.font.family.sansSerif};
    }
 `;
 
