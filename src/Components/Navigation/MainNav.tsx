@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import { MainNavLinks } from "../../NavigationData";
 
 interface IMainNavProps {}
 
@@ -31,21 +32,26 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const MainNav: React.FC<IMainNavProps> = () => {
+  const [navLinks, setNavLinks] = useState([{ label: "", url: "" }]);
+  const loadNavLinks = () => {
+    let links = MainNavLinks.map((page) => {
+      return { label: page.label, url: page.url };
+    });
+    setNavLinks(links);
+  };
+  useEffect(() => {
+    loadNavLinks();
+  }, []);
   return (
     <StyledMainNavWrapper>
       <StyledNavList>
-        <StyledNavItem>
-          <StyledNavLink to="/portfolio">Portfolio</StyledNavLink>
-        </StyledNavItem>
-        <StyledNavItem>
-          <StyledNavLink to="/skills">Skills</StyledNavLink>
-        </StyledNavItem>
-        <StyledNavItem>
-          <StyledNavLink to="/about">About Me</StyledNavLink>
-        </StyledNavItem>
-        <StyledNavItem>
-          <StyledNavLink to="/connect">Let's Connect</StyledNavLink>
-        </StyledNavItem>
+        {navLinks.map((page) => {
+          return (
+            <StyledNavItem>
+              <StyledNavLink to={page.url}>{page.label}</StyledNavLink>
+            </StyledNavItem>
+          );
+        })}
       </StyledNavList>
     </StyledMainNavWrapper>
   );

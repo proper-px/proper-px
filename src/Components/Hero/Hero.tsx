@@ -12,6 +12,8 @@ const StyledHero = styled.div<IStyledHeroProps>`
   width: 100%;
   padding-top: ${(props) => props.theme.spacing.large};
   padding-bottom: ${(props) => props.theme.spacing.small};
+  background-color: ${(props) => props.theme.brandColors.secondary};
+  color: ${(props) => props.theme.colors.white};
 `;
 
 const Hero: React.FC<IHeroProps> = (props) => {
