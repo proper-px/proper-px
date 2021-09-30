@@ -125,6 +125,44 @@ const Theme: DefaultTheme = {
     barPadding: `${Padding.base}`,
     isFixed: false,
   },
+  heroVariants: {
+    primary: {
+      bgColor: BrandColors.primary,
+      fgColor: Colors.white,
+      buttonColor: "primary",
+    },
+    secondary: {
+      bgColor: BrandColors.secondary,
+      fgColor: Colors.white,
+      buttonColor: "primary",
+    },
+    light: {
+      bgColor: Colors.white,
+      fgColor: Colors.black,
+      buttonColor: "primary",
+    },
+    dark: {
+      bgColor: Colors.black,
+      fgColor: Colors.white,
+      buttonColor: "primary",
+    },
+  },
+  buttonVariants: {
+    primary: {
+      bgColor: BrandColors.primary,
+      fgColor: Colors.white,
+      hoverColor: BrandColors.tertiary,
+      disabledColor: Colors.light,
+      activeColor: BrandColors.tertiary,
+    },
+    secondary: {
+      bgColor: BrandColors.secondary,
+      fgColor: Colors.white,
+      hoverColor: BrandColors.primary,
+      disabledColor: Colors.light,
+      activeColor: BrandColors.tertiary,
+    },
+  },
 };
 
 const GlobalStyle = createGlobalStyle`

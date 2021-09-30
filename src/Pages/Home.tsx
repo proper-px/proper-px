@@ -7,7 +7,7 @@ interface IHomePageProps {}
 const HomePage: React.FC<IHomePageProps> = (props) => {
   return (
     <>
-      <Hero title="Hello World" />
+      <Hero buttonColor="secondary" title="Hello World" variant="secondary" />
     </>
   );
 };

@@ -33,6 +33,15 @@ export interface IShirtSizes {
   xxl?: string;
 }
 
+export interface IBackgroundForeground {
+  bgColor: string;
+  fgColor: string;
+}
+
+export interface IHeroVariant extends IBackgroundForeground {
+  buttonColor: string;
+}
+
 export interface IPaddingProperties {
   paddingX: string;
   paddingY: string;
@@ -100,6 +109,18 @@ declare module "styled-components" {
       linkPadding: string;
       isFixed: boolean;
       barPadding: string;
+    };
+    heroVariants: {
+      [element: string]: IHeroVariant;
+    };
+    buttonVariants: {
+      [element: string]: {
+        bgColor: string;
+        fgColor: string;
+        hoverColor: string;
+        disabledColor: string;
+        activeColor: string;
+      };
     };
   }
 }
