@@ -8,6 +8,11 @@ const useSessionStorage = (value: any, key: string) => {
     setSessionValue(event.target.value);
   };
 
+  useEffect(() => {
+    const fromSession = sessionStorage.getItem(key);
+    fromSession && setSessionValue(JSON.parse(fromSession));
+  }, []);
+
   return [sessionValue, handleSessionValueUpdate];
 };
 
