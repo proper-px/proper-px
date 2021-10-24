@@ -4,8 +4,6 @@ import styled, { ThemeProvider } from "styled-components";
 import HomePage from "Pages/Home";
 import { Theme, GlobalStyle } from "Theme";
 import MainNav from "Components/Navigation/MainNav";
-import Portfolio from "Pages/Portfolio/Index";
-import ToDo from "Pages/Portfolio/ToDoApp/Index";
 
 const App = () => {
   return (
@@ -19,8 +17,6 @@ const App = () => {
           <main>
             <Switch>
               <Route path="/" exact component={HomePage} />
-              <Route path="/portfolio" exact component={Portfolio} />
-              <Route path="/portfolio/todo" component={ToDo} />
             </Switch>
           </main>
         </BrowserRouter>
