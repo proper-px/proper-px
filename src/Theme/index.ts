@@ -8,6 +8,12 @@ const BrandColors: IBrandColors = {
   tertiary: "#368F8B",
 };
 
+const DarkBrandColors: IBrandColors = {
+  primary: "#000000",
+  secondary: "#1A4975",
+  tertiary: "#368F8B",
+};
+
 const Colors: IColors = {
   lighter: "#F2F2F2",
   light: "#CCCCCC",
@@ -165,6 +171,108 @@ const Theme: DefaultTheme = {
   },
 };
 
+const Dark: DefaultTheme = {
+  colors: { ...Colors },
+  brandColors: { ...DarkBrandColors },
+  font: { ...FontStyles },
+  spacing: { ...Spacing },
+  padding: { ...Padding },
+  border: { ...Border },
+  breakpoints: {
+    xs: "0",
+    sm: "576px",
+    md: "768px",
+    lg: "992px",
+    xl: "1200px",
+    xxl: "1400px",
+  },
+  containerMaxWidths: {
+    sm: "540px",
+    md: "720px",
+    lg: "960px",
+    xl: "1140px",
+    xxl: "1320px",
+  },
+  status: {
+    success: Colors.green,
+    warning: Colors.yellow,
+    error: Colors.red,
+  },
+  input: {
+    padding: {
+      paddingX: Padding.small,
+      paddingY: Padding.base,
+    },
+    border: {
+      borderWidth: Border.borderWidth.base,
+      borderStyle: Border.borderStyle,
+      borderColor: Colors.light,
+      borderRadius: Border.radius.base,
+    },
+  },
+  button: {
+    padding: {
+      paddingX: Padding.small,
+      paddingY: Padding.base,
+    },
+    font: {
+      fontSize: FontStyles.size.base,
+      fontWeight: FontStyles.weight.base,
+      fontFamily: FontStyles.family.sansSerif,
+    },
+    border: {
+      borderWidth: Border.borderWidth.base,
+      borderStyle: Border.borderStyle,
+      borderRadius: Border.radius.base,
+    },
+  },
+  navbar: {
+    bgColor: BrandColors.primary,
+    fgColor: Colors.light,
+    linkPadding: `${Padding.small} ${Padding.base}`,
+    barPadding: `${Padding.base}`,
+    isFixed: false,
+  },
+  heroVariants: {
+    primary: {
+      bgColor: BrandColors.primary,
+      fgColor: Colors.white,
+      buttonColor: "primary",
+    },
+    secondary: {
+      bgColor: BrandColors.secondary,
+      fgColor: Colors.white,
+      buttonColor: "primary",
+    },
+    light: {
+      bgColor: Colors.white,
+      fgColor: Colors.black,
+      buttonColor: "primary",
+    },
+    dark: {
+      bgColor: Colors.black,
+      fgColor: Colors.white,
+      buttonColor: "primary",
+    },
+  },
+  buttonVariants: {
+    primary: {
+      bgColor: BrandColors.primary,
+      fgColor: Colors.white,
+      hoverColor: BrandColors.tertiary,
+      disabledColor: Colors.light,
+      activeColor: BrandColors.tertiary,
+    },
+    secondary: {
+      bgColor: BrandColors.secondary,
+      fgColor: Colors.white,
+      hoverColor: BrandColors.primary,
+      disabledColor: Colors.light,
+      activeColor: BrandColors.tertiary,
+    },
+  },
+};
+
 const GlobalStyle = createGlobalStyle`
     ${reset}
     * {
@@ -177,4 +285,4 @@ const GlobalStyle = createGlobalStyle`
    }
 `;
 
-export { Theme, GlobalStyle };
+export { Theme, Dark, GlobalStyle };

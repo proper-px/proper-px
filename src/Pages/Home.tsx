@@ -1,5 +1,5 @@
 import Hero from "Components/Hero/Hero";
-import React, { ChangeEventHandler, useEffect, useState, useRef, createRef } from "react";
+import React from "react";
 import { Container, Row, Col } from "styled-bootstrap-grid";
 
 interface IHomePageProps {}
